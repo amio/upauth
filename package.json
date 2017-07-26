@@ -1,0 +1,21 @@
+{
+  "name": "upauth",
+  "version": "1.0.0",
+  "description": "Simple user-password auth.",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro index.js"
+  },
+  "author": "Amio <amio.cn@gmail.com>",
+  "license": "ISC",
+  "now": {
+    "alias": "upauth",
+    "files": [
+      "users.json"
+    ]
+  },
+  "dependencies": {
+    "browserify-aes": "^1.0.6",
+    "micro": "^7.3.3"
+  }
+}
