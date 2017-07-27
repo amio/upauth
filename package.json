@@ -4,13 +4,14 @@
   "description": "Simple user-password auth.",
   "main": "index.js",
   "scripts": {
-    "start": "micro index.js"
+    "start": "micro"
   },
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "now": {
     "alias": "upauth",
     "files": [
+      "index.js",
       "users.json"
     ]
   },
