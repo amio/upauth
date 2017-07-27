@@ -1,0 +1,11 @@
+{
+  "alias": [
+    "auth",
+    "upauth",
+    "auth.murm.net"
+  ],
+  "files": [
+    "index.js",
+    "users.json"
+  ]
+}
