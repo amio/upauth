@@ -9,7 +9,9 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@amio/micro-cors": "0.0.5",
     "browserify-aes": "^1.0.6",
+    "js-cookie": "^2.1.4",
     "micro": "^7.3.3"
   }
 }

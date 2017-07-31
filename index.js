@@ -1,9 +1,10 @@
 const { json } = require('micro')
+const cors = require('micro-cors')()
 const aes = require('browserify-aes')
 const users = require('./users.json')
 
 const algorithm = 'aes-256-ctr'
-const password = process.env.UP_PASSWORD || '4e82296c77cadbbb'
+const password = process.env.UPAUTH_KEY || '4e82296c77cadbbb'
 
 function encrypt (text) {
   var cipher = aes.createCipher(algorithm, password)
@@ -19,10 +20,8 @@ function encrypt (text) {
 //   return dec
 // }
 
-module.exports = async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*')
+module.exports = cors(async (req, res) => {
   const { username, password } = await json(req)
-
   if (username && password) {
     if (users[username] === password) {
       return { token: encrypt(username) }
@@ -32,4 +31,4 @@ module.exports = async (req, res) => {
   } else {
     return { error: 'Require username & password' }
   }
-}
+})
